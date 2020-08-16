@@ -7,6 +7,7 @@ import AddTask from "./components/AddTask";
 import Task from "./components/Task";
 import TasksList from "./components/TasksList";
 
+
   function App() {
     return (
       <Router>
@@ -33,7 +34,7 @@ import TasksList from "./components/TasksList";
             <Switch>
               <Route exact path={["/", "/tasks"]} component={TasksList} />
               <Route exact path="/add" component={AddTask} />
-              <Route path="/tutorials/:id" component={Task} />
+              <Route path="/tasks/:id" component={Task} />
             </Switch>
           </div>
         </div>

@@ -1,23 +1,23 @@
 import http from "../http-common";
 
 const getAll = () => {
-  return http.get("/tasks");
+  return http.get("/get");
 };
 
 const get = id => {
-  return http.get(`/tasks/${id}`);
+  return http.get(`/getTask?id=${id}`);
 };
 
 const create = data => {
-  return http.post("/tasks", data);
+  return http.post("/create", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/tasks/${id}`, data);
+  return http.put(`/update/${id}`, data);
 };
 
 const remove = id => {
-  return http.delete(`/tasks/${id}`);
+  return http.delete(`/delete?id=${id}`);
 };
 
 const removeAll = () => {
@@ -25,8 +25,10 @@ const removeAll = () => {
 };
 
 const findByTitle = title => {
-  return http.get(`/tasks?title=${title}`);
+  return http.get(`/search?title=${title}`);
 };
+
+
 
 export default {
   getAll,
