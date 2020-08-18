@@ -87,8 +87,7 @@ const TasksList = () => {
             <h4>Tasks List</h4>
     
             <ul className="list-group">
-              {tasks &&
-                tasks.map((task, index) => (
+              {tasks && tasks.map((task, index) => (
                   <li
                     className={
                       "list-group-item " + (index === currentIndex ? "active" : "")

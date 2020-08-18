@@ -35,6 +35,8 @@ import TasksList from "./components/TasksList";
               <Route exact path={["/", "/tasks"]} component={TasksList} />
               <Route exact path="/add" component={AddTask} />
               <Route path="/tasks/:id" component={Task} />
+              <Route path="/search/:title" component={TasksList} />
+
             </Switch>
           </div>
         </div>

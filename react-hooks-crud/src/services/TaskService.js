@@ -4,6 +4,7 @@ const getAll = () => {
   return http.get("/get");
 };
 
+//get specific task
 const get = id => {
   return http.get(`/getTask?id=${id}`);
 };
@@ -13,7 +14,7 @@ const create = data => {
 };
 
 const update = (id, data) => {
-  return http.put(`/update/${id}`, data);
+  return http.put(`/update?id=${id}`, data);
 };
 
 const remove = id => {
