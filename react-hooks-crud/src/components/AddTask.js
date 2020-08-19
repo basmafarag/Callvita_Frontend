@@ -6,7 +6,6 @@ const AddTask = () => {
     id: null,
     title: "",
     description: "",
-    published: false
   };
   const [task, setTask] = useState(initialTaskState);
   const [submitted, setSubmitted] = useState(false);
@@ -28,10 +27,8 @@ const AddTask = () => {
           id: response.data.id,
           title: response.data.title,
           description: response.data.description,
-          published: response.data.published
         });
         setSubmitted(true);
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);

@@ -6,7 +6,6 @@ const Task = props => {
     id: null,
     title: "",
     description: "",
-    published: false
 
   };
   const [currentTask, setCurrentTask] = useState(initialTaskState);
@@ -16,7 +15,6 @@ const Task = props => {
     TaskDataService.get(id)
       .then(response => {
         setCurrentTask(response.data);
-        console.log(response.data);
       })
       .catch(e => {
         console.log(e);
@@ -42,8 +40,7 @@ const Task = props => {
 
     TaskDataService.update(currentTask.id, data)
       .then(response => {
-        setCurrentTask({ ...currentTask, published: status });
-        console.log(response.data);
+        setCurrentTask({ ...currentTask});
       })
       .catch(e => {
         console.log(e);
@@ -54,7 +51,6 @@ const Task = props => {
   const updateTask = () => {
     TaskDataService.update(currentTask.id, currentTask)
       .then(response => {
-        console.log(response.data);
         setMessage("The task was updated successfully!");
       })
       .catch(e => {
@@ -65,7 +61,6 @@ const Task = props => {
   const deleteTask = () => {
     TaskDataService.remove(currentTask.id)
       .then(response => {
-        console.log(response.data);
         props.history.push("/tasks");
       })
       .catch(e => {
@@ -102,30 +97,9 @@ const Task = props => {
               />
             </div>
 
-            <div className="form-group">
-              <label>
-                <strong>Status:</strong>
-              </label>
-              {currentTask.published ? "Published" : "Pending"}
-            </div>
-          </form>
+             </form>
 
-          {currentTask.published ? (
-            <button
-              className="badge badge-primary mr-2"
-              onClick={() => updatePublished(false)}
-            >
-              UnPublish
-            </button>
-          ) : (
-            <button
-              className="badge badge-primary mr-2"
-              onClick={() => updatePublished(true)}
-            >
-              Publish
-            </button>
-          )}
-
+         
           <button className="badge badge-danger mr-2" onClick={deleteTask}>
             Delete
           </button>

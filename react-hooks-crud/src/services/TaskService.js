@@ -21,9 +21,7 @@ const remove = id => {
   return http.delete(`/delete?id=${id}`);
 };
 
-const removeAll = () => {
-  return http.delete(`/tasks`);
-};
+
 
 const findByTitle = title => {
   return http.get(`/search?title=${title}`);
@@ -37,7 +35,6 @@ export default {
   create,
   update,
   remove,
-  removeAll,
   findByTitle
 };
  

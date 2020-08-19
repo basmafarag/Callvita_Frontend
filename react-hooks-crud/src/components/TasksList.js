@@ -39,22 +39,12 @@ const TasksList = () => {
       setCurrentIndex(index);
     };
   
-    const removeAllTasks = () => {
-      TaskDataService.removeAll()
-        .then(response => {
-          console.log(response.data);
-          refreshList();
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    };
+    
   
     const findByTitle = () => {
       TaskDataService.findByTitle(searchTitle)
         .then(response => {
           setTasks(response.data);
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -100,13 +90,7 @@ const TasksList = () => {
                 ))}
             </ul>
     
-            <button
-              className="m-3 btn btn-sm btn-danger"
-              onClick={removeAllTasks}
-            >
-              Remove All
-            </button>
-          </div>
+         </div>
           <div className="col-md-6">
             {currentTask ? (
               <div>

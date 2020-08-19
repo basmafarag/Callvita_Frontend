@@ -14,7 +14,7 @@ import TasksList from "./components/TasksList";
         <div>
           <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a href="/tasks" className="navbar-brand">
-              bezKoder
+              CallVita
             </a>
             <div className="navbar-nav mr-auto">
               <li className="nav-item">
@@ -35,7 +35,6 @@ import TasksList from "./components/TasksList";
               <Route exact path={["/", "/tasks"]} component={TasksList} />
               <Route exact path="/add" component={AddTask} />
               <Route path="/tasks/:id" component={Task} />
-              <Route path="/search/:title" component={Task} />
 
             </Switch>
           </div>
